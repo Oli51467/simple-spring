@@ -7,7 +7,6 @@ import com.sdu.springframework.core.bean.Param;
 import com.sdu.springframework.core.bean.View;
 import com.sdu.springframework.core.manager.*;
 import com.sdu.springframework.core.util.ReflectUtil;
-import org.apache.commons.lang3.StringUtils;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
@@ -88,7 +87,7 @@ public class DispatcherServlet extends HttpServlet {
      */
     private void handleViewResult(View view, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String path = view.getPath();
-        if (StringUtils.isNotEmpty(path)) {
+        if (path != null && !path.isEmpty()) {
             if (path.startsWith("/")) { //重定向
                 response.sendRedirect(request.getContextPath() + path);
             } else { //请求转发

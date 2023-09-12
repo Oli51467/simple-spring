@@ -85,8 +85,4 @@ public final class ConfigManager {
     public static boolean getBoolean(String key) {
         return PropsUtil.getBoolean(CONFIG_PROPS, key);
     }
-
-    public static void main(String[] args) {
-        System.out.println(getJdbcDriver());
-    }
 }

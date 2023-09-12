@@ -15,6 +15,5 @@ public final class ManagerLoader {
         for (Class<?> cls : classList) {
             ClassUtil.loadClass(cls.getName());
         }
-        System.out.println("Success");
     }
 }

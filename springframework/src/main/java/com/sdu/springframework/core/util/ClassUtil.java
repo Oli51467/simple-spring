@@ -1,7 +1,6 @@
 package com.sdu.springframework.core.util;
 
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 
 import java.io.File;
 import java.net.JarURLConnection;
@@ -99,7 +98,7 @@ public final class ClassUtil {
             String fileName = file.getName();
             if (file.isFile()) {
                 String className = fileName.substring(0, fileName.lastIndexOf("."));
-                if (StringUtils.isNoneEmpty(className)) {
+                if (!className.isEmpty()) {
                     className = packageName + "." + className;
                 }
                 doAddClass(classSet, className);

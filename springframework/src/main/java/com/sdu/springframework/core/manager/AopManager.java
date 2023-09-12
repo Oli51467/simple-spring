@@ -26,8 +26,11 @@ public final class AopManager {
             Map<Class<?>, List<Proxy>> targetMap = createTargetMap(aspectMap);
             // 把切面对象织入到目标类中, 创建代理对象
             for (Map.Entry<Class<?>, List<Proxy>> targetEntry : targetMap.entrySet()) {
+                // 目标bean
                 Class<?> targetClass = targetEntry.getKey();
+                // 获取到的是所有代理对该切面的增强
                 List<Proxy> proxyList = targetEntry.getValue();
+                // 通过代理工厂一次性将所有增强实现加入切面
                 Object proxy = ProxyFactory.createProxy(targetClass, proxyList);
                 // 覆盖Bean容器里目标类对应的实例, 下次从Bean容器获取的就是代理对象了
                 BeanManager.setBean(targetClass, proxy);
