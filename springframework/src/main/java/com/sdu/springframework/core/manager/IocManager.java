@@ -15,7 +15,7 @@ public final class IocManager {
     static {
         // 遍历容器中的所有bean
         Map<Class<?>, Object> beanMap = BeanManager.getBeanMap();
-        if (null != beanMap && !beanMap.isEmpty()) {
+        if (!beanMap.isEmpty()) {
             for (Map.Entry<Class<?>, Object> entry : beanMap.entrySet()) {
                 // 获取bean的class和实例
                 Class<?> beanClass = entry.getKey();
