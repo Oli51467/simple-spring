@@ -8,11 +8,13 @@ public final class ManagerLoader {
         Class<?>[] classList = {
                 ClassManager.class,
                 BeanManager.class,
+                AopManager.class,
                 IocManager.class,
                 ControllerManager.class
         };
         for (Class<?> cls : classList) {
             ClassUtil.loadClass(cls.getName());
         }
+        System.out.println("Success");
     }
 }

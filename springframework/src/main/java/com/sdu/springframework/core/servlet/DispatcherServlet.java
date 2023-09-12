@@ -26,7 +26,7 @@ import java.util.Map;
  * 请求转发器
  * 该Servlet将会在Web容器启动时加载
  */
-@WebServlet(urlPatterns = "/*", loadOnStartup = 0)
+@WebServlet(urlPatterns = "/test", loadOnStartup = 0)
 public class DispatcherServlet extends HttpServlet {
 
     @Override
@@ -59,11 +59,6 @@ public class DispatcherServlet extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String requestMethod = req.getMethod().toUpperCase();
         String requestPath = req.getPathInfo();
-        // 这里根据Tomcat的配置路径有两种情况, 一种是 "/a", 另一种是 "/context地址/a".
-        String[] splits = requestPath.split("/");
-        if (splits.length > 2) {
-            requestPath = "/" + splits[2];
-        }
         // 根据请求获取处理器
         Handler handler = ControllerManager.getHandler(requestMethod, requestPath);
         if (null != handler) {
