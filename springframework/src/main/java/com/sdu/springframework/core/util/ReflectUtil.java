@@ -9,7 +9,7 @@ import java.lang.reflect.Method;
  * 反射工具类
  */
 @Slf4j
-public class ReflectUtil {
+public final class ReflectUtil {
 
     /**
      * 根据一个类创建实例

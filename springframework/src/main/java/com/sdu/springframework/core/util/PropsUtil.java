@@ -11,7 +11,7 @@ import java.util.Properties;
  * 属性文件工具类
  */
 @Slf4j
-public class PropsUtil {
+public final class PropsUtil {
 
     /**
      * 加载属性文件

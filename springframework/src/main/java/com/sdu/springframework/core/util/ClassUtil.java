@@ -16,7 +16,7 @@ import java.util.jar.JarFile;
  * 类操作工具类
  */
 @Slf4j
-public class ClassUtil {
+public final class ClassUtil {
 
     public static ClassLoader getClassLoader() {
         return Thread.currentThread().getContextClassLoader();
