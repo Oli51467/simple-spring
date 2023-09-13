@@ -1,4 +1,4 @@
-package com.sdu.springframework.core.servlet;
+package com.sdu.client.servlet;
 
 import com.alibaba.fastjson2.JSONObject;
 import com.sdu.springframework.core.bean.Data;
@@ -25,7 +25,7 @@ import java.util.Map;
  * 请求转发器
  * 该Servlet将会在Web容器启动时加载
  */
-@WebServlet(urlPatterns = "/test", loadOnStartup = 0)
+@WebServlet(urlPatterns = "/*", loadOnStartup = 0)
 public class DispatcherServlet extends HttpServlet {
 
     @Override

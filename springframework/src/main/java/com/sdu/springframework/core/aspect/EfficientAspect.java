@@ -9,7 +9,7 @@ import java.lang.reflect.Method;
 /**
  * 性能切面, 获取接口执行时间
  */
-@Aspect(pkg = "com.sdu.controller", clazz = "UserController")
+@Aspect(pkg = "com.sdu.springframework.controller", clazz = "UserController")
 @Slf4j
 public class EfficientAspect extends ProxyAspect {
 
