@@ -11,7 +11,3 @@ IOC的实现思路如下:
 - 获取应用中所有Bean (Controller和Service) 的Class对象, 通过反射创建实例, 然后存储到 Bean容器中.
 - 遍历Bean容器中的所有Bean, 为所有带 @Autowired 注解的属性注入实例.
 - IOC操作要在应用启动时就完成, 所以必须写在静态代码块中.
-
-### Servlet
-
-Servlet基础：[Servlet基础](https://blog.csdn.net/litianxiang_kaola/article/details/78856898)
